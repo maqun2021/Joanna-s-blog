@@ -1,0 +1,39 @@
+backend:
+  name: github
+  repo: <maqun2021>/<Joanna-s-blog>
+  branch: main
+  site_domain: <你的Netlify站点域名>
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "posts"
+    label: "文章"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "封面图片", name: "cover", widget: "image", required: false }
+      - { label: "分类", name: "category", widget: "string", required: false }
+      - { label: "正文", name: "body", widget: "markdown" }
+  - name: "cards"
+    label: "首页卡片"
+    folder: "cards"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "描述", name: "description", widget: "text" }
+      - { label: "图片", name: "image", widget: "image", required: false }
+      - { label: "链接", name: "link", widget: "string", required: false }
+  - name: "daily"
+    label: "日常生活"
+    folder: "daily"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "日期", name: "date", widget: "datetime" }
+      - { label: "图片", name: "image", widget: "image", required: false }
+      - { label: "正文", name: "body", widget: "markdown" } 
