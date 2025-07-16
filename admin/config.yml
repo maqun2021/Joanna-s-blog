@@ -2,7 +2,7 @@ backend:
   name: github
   repo: maqun2021/Joanna-s-blog
   branch: main
-  site_domain:joannasblog.netlify.app
+site_domain: joannasblog.netlify.app
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 collections:
@@ -36,4 +36,4 @@ collections:
       - { label: "标题", name: "title", widget: "string" }
       - { label: "日期", name: "date", widget: "datetime" }
       - { label: "图片", name: "image", widget: "image", required: false }
-      - { label: "正文", name: "body", widget: "markdown" } 
+      - { label: "正文", name: "body", widget: "markdown" }
