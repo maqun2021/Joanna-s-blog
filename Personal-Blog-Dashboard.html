@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Personal Blog</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#D64045',
+secondary: '#A6333A'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+.bg-custom {
+background-image: url('https://readdy.ai/api/search-image?query=minimalist%20modern%20abstract%20background%20with%20soft%20geometric%20patterns%20in%20warm%20tones%20and%20subtle%20textures%20creating%20a%20clean%20professional%20atmosphere%20perfect%20for%20personal%20blog%20design&width=1920&height=1080&seq=bg001&orientation=landscape');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+.backdrop-overlay {
+backdrop-filter: blur(0.5px);
+background: rgba(255, 255, 255, 0.85);
+}
+.custom-scrollbar::-webkit-scrollbar {
+width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+background: #f1f1f1;
+border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+background: #D64045;
+border-radius: 3px;
+}
+.annotation-highlight {
+background: rgba(214, 64, 69, 0.2);
+border-bottom: 2px solid #D64045;
+}
+</style>
+</head>
+<body class="bg-custom min-h-screen">
+<div class="backdrop-overlay min-h-screen">
+<header class="bg-white/90 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+<h1 class="text-2xl font-['Pacifico'] text-primary">Joanna</h1>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#intro" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">Intro</a>
+<a href="#knowledge" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">Knowledge Notes</a>
+<a href="#daily" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">Daily Life</a>
+<a href="#coming" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">Coming Soon</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button id="bgUploadBtn" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-secondary transition-colors duration-200 whitespace-nowrap">
+<div class="w-4 h-4 flex items-center justify-center mr-2 inline-flex">
+<i class="ri-image-line"></i>
+</div>
+Change Background
+</button>
+<button class="md:hidden text-gray-700">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<section id="intro" class="mb-16">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Welcome to My Personal Blog</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore different sections of my digital space where I share knowledge, experiences, and thoughts about life and learning.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
+<i class="ri-information-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Introduction</h3>
+<p class="text-gray-600 mb-4">Discover what each section offers and navigate through different categories of content I share regularly.</p>
+<a href="#intro" class="text-primary hover:text-secondary font-medium inline-flex items-center">
+Learn More
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
+<i class="ri-book-open-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Knowledge Notes</h3>
+<p class="text-gray-600 mb-4">Professional insights, learning materials, and annotated documents from my continuous journey of growth.</p>
+<a href="#knowledge" class="text-primary hover:text-secondary font-medium inline-flex items-center">
+Explore Notes
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
+<i class="ri-heart-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Daily Life</h3>
+<p class="text-gray-600 mb-4">Authentic moments, photos, and stories from my everyday experiences shared in the most genuine way.</p>
+<a href="#daily" class="text-primary hover:text-secondary font-medium inline-flex items-center">
+View Stories
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
+<i class="ri-rocket-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Coming Soon</h3>
+<p class="text-gray-600 mb-4">Exciting new features and interesting content updates are on the way. Stay tuned for more!</p>
+<a href="#coming" class="text-primary hover:text-secondary font-medium inline-flex items-center">
+Stay Updated
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section id="knowledge" class="mb-16">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-3xl font-bold text-gray-900">Knowledge Notes</h2>
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2">
+<button id="sortTime" class="px-3 py-1 !rounded-button bg-primary text-white text-sm whitespace-nowrap">Time</button>
+<button id="sortCategory" class="px-3 py-1 !rounded-button bg-gray-200 text-gray-700 text-sm whitespace-nowrap">Category</button>
+</div>
+<button id="uploadFile" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-secondary transition-colors duration-200 whitespace-nowrap">
+<div class="w-4 h-4 flex items-center justify-center mr-2 inline-flex">
+<i class="ri-upload-line"></i>
+</div>
+Upload File
+</button>
+</div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg">
+<i class="ri-file-text-line ri-lg text-blue-600"></i>
+</div>
+<span class="text-sm text-gray-500">Dec 15, 2024</span>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Advanced React Patterns</h3>
+<p class="text-gray-600 mb-4">Comprehensive guide to modern React development patterns including hooks, context, and performance optimization techniques.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Frontend</span>
+<button class="text-primary hover:text-secondary font-medium">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-eye-line"></i>
+</div>
+</button>
+</div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-lg">
+<i class="ri-database-line ri-lg text-green-600"></i>
+</div>
+<span class="text-sm text-gray-500">Dec 12, 2024</span>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Database Design Principles</h3>
+<p class="text-gray-600 mb-4">Essential concepts for designing scalable and efficient database schemas with real-world examples and best practices.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Backend</span>
+<button class="text-primary hover:text-secondary font-medium">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-eye-line"></i>
+</div>
+</button>
+</div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-purple-100 rounded-lg">
+<i class="ri-palette-line ri-lg text-purple-600"></i>
+</div>
+<span class="text-sm text-gray-500">Dec 10, 2024</span>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-2">UI/UX Design Systems</h3>
+<p class="text-gray-600 mb-4">Building consistent and scalable design systems that enhance user experience and streamline development workflows.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Design</span>
+<button class="text-primary hover:text-secondary font-medium">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-eye-line"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section id="daily" class="mb-16">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-3xl font-bold text-gray-900">Daily Life</h2>
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2">
+<button id="viewGrid" class="p-2 !rounded-button bg-primary text-white">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-grid-line"></i>
+</div>
+</button>
+<button id="viewTimeline" class="p-2 !rounded-button bg-gray-200 text-gray-700">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-timeline-view"></i>
+</div>
+</button>
+</div>
+<button id="newPost" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-secondary transition-colors duration-200 whitespace-nowrap">
+<div class="w-4 h-4 flex items-center justify-center mr-2 inline-flex">
+<i class="ri-add-line"></i>
+</div>
+New Post
+</button>
+</div>
+</div>
+<div id="dailyGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-white/80 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=cozy%20coffee%20shop%20morning%20scene%20with%20warm%20lighting%20steaming%20coffee%20cup%20and%20laptop%20on%20wooden%20table%20creating%20peaceful%20productive%20atmosphere%20for%20daily%20life%20blogging&width=400&height=300&seq=daily001&orientation=landscape" alt="Morning coffee" class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm text-gray-500">December 16, 2024</span>
+<div class="flex items-center space-x-1">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-heart-line text-primary"></i>
+</div>
+<span class="text-sm text-gray-500">24</span>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Perfect Morning Routine</h3>
+<p class="text-gray-600">Started my day with a perfect cup of coffee and some productive coding. There's something magical about those quiet morning hours when creativity flows naturally.</p>
+</div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=beautiful%20sunset%20landscape%20with%20vibrant%20orange%20and%20pink%20colors%20reflecting%20peaceful%20evening%20moment%20perfect%20for%20personal%20blog%20daily%20life%20sharing&width=400&height=300&seq=daily002&orientation=landscape" alt="Evening walk" class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm text-gray-500">December 14, 2024</span>
+<div class="flex items-center space-x-1">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-heart-line text-primary"></i>
+</div>
+<span class="text-sm text-gray-500">18</span>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Evening Reflections</h3>
+<p class="text-gray-600">Took a peaceful walk during sunset today. These moments remind me to slow down and appreciate the simple beauty around us every day.</p>
+</div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=home%20office%20workspace%20setup%20with%20plants%20books%20and%20modern%20desk%20creating%20inspiring%20productive%20environment%20for%20personal%20blog%20lifestyle%20content&width=400&height=300&seq=daily003&orientation=landscape" alt="Workspace" class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm text-gray-500">December 12, 2024</span>
+<div class="flex items-center space-x-1">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-heart-line text-primary"></i>
+</div>
+<span class="text-sm text-gray-500">31</span>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Workspace Refresh</h3>
+<p class="text-gray-600">Finally organized my home office space. A clean, inspiring environment really makes a difference in productivity and creativity. Small changes, big impact!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="coming" class="mb-16">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Coming Soon</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Exciting new features and content are in development. Stay tuned for updates and be the first to know when they launch!</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border-2 border-dashed border-primary/30">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
+<i class="ri-chat-3-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Interactive Comments</h3>
+<p class="text-gray-600 mb-4">Real-time commenting system with threading, reactions, and notification features to build a community around shared content.</p>
+<div class="flex items-center text-sm text-primary">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-time-line"></i>
+</div>
+Coming in Q1 2025
+</div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border-2 border-dashed border-primary/30">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
+<i class="ri-search-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Advanced Search</h3>
+<p class="text-gray-600 mb-4">Powerful search functionality with filters, tags, and AI-powered content recommendations to help you find exactly what you need.</p>
+<div class="flex items-center text-sm text-primary">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-time-line"></i>
+</div>
+Coming in Q1 2025
+</div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border-2 border-dashed border-primary/30">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
+<i class="ri-smartphone-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Mobile App</h3>
+<p class="text-gray-600 mb-4">Native mobile application for iOS and Android with offline reading, push notifications, and seamless synchronization.</p>
+<div class="flex items-center text-sm text-primary">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-time-line"></i>
+</div>
+Coming in Q2 2025
+</div>
+</div>
+</div>
+<div class="bg-white/80 backdrop-blur-sm rounded-lg p-8 text-center shadow-lg">
+<h3 class="text-2xl font-semibold text-gray-900 mb-4">Stay Updated</h3>
+<p class="text-gray-600 mb-6">Subscribe to get notified about new features, content updates, and exclusive behind-the-scenes insights.</p>
+<div class="flex max-w-md mx-auto gap-3">
+<input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+<button class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-secondary transition-colors duration-200 whitespace-nowrap">
+Subscribe
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-white/90 backdrop-blur-sm border-t border-gray-200 mt-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid md:grid-cols-4 gap-8">
+<div class="col-span-2">
+<h3 class="text-2xl font-['Pacifico'] text-primary mb-4">Joanna</h3>
+<p class="text-gray-600 mb-4">A personal space for sharing knowledge, experiences, and authentic moments from my journey of continuous learning and growth.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-primary transition-colors duration-200">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-twitter-line ri-lg"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors duration-200">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-github-line ri-lg"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors duration-200">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-linkedin-line ri-lg"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-gray-900 mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#intro" class="text-gray-600 hover:text-primary transition-colors duration-200">Introduction</a></li>
+<li><a href="#knowledge" class="text-gray-600 hover:text-primary transition-colors duration-200">Knowledge Notes</a></li>
+<li><a href="#daily" class="text-gray-600 hover:text-primary transition-colors duration-200">Daily Life</a></li>
+<li><a href="#coming" class="text-gray-600 hover:text-primary transition-colors duration-200">Coming Soon</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-gray-900 mb-4">Contact</h4>
+<ul class="space-y-2">
+<li class="text-gray-600">hello@myblog.com</li>
+<li class="text-gray-600">+1 (555) 123-4567</li>
+<li class="text-gray-600">San Francisco, CA</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-200 mt-8 pt-8 text-center">
+<p class="text-gray-600">&copy; 2024 My Personal Blog. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+<div id="bgUploadModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
+<div class="flex items-center justify-center min-h-screen p-4">
+<div class="bg-white rounded-lg p-6 w-full max-w-md">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-semibold text-gray-900">Change Background</h3>
+<button id="closeBgModal" class="text-gray-400 hover:text-gray-600">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-close-line ri-lg"></i>
+</div>
+</button>
+</div>
+<div class="space-y-4">
+<div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+<div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg mx-auto mb-4">
+<i class="ri-upload-line ri-xl text-gray-400"></i>
+</div>
+<p class="text-gray-600 mb-2">Drop your image here or</p>
+<button class="text-primary hover:text-secondary font-medium">browse files</button>
+<input type="file" accept="image/*" class="hidden" id="bgFileInput">
+</div>
+<div class="grid grid-cols-3 gap-3">
+<button class="aspect-square bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg"></button>
+<button class="aspect-square bg-gradient-to-br from-pink-400 to-red-500 rounded-lg"></button>
+<button class="aspect-square bg-gradient-to-br from-green-400 to-blue-500 rounded-lg"></button>
+</div>
+<div class="flex justify-end space-x-3">
+<button id="cancelBg" class="px-4 py-2 text-gray-600 hover:text-gray-800 !rounded-button whitespace-nowrap">Cancel</button>
+<button id="applyBg" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-secondary transition-colors duration-200 whitespace-nowrap">Apply</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script id="navigation">
+document.addEventListener('DOMContentLoaded', function() {
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+navLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+});
+</script>
+<script id="backgroundUpload">
+document.addEventListener('DOMContentLoaded', function() {
+const bgUploadBtn = document.getElementById('bgUploadBtn');
+const bgUploadModal = document.getElementById('bgUploadModal');
+const closeBgModal = document.getElementById('closeBgModal');
+const cancelBg = document.getElementById('cancelBg');
+const applyBg = document.getElementById('applyBg');
+const bgFileInput = document.getElementById('bgFileInput');
+bgUploadBtn.addEventListener('click', function() {
+bgUploadModal.classList.remove('hidden');
+});
+closeBgModal.addEventListener('click', function() {
+bgUploadModal.classList.add('hidden');
+});
+cancelBg.addEventListener('click', function() {
+bgUploadModal.classList.add('hidden');
+});
+bgUploadModal.addEventListener('click', function(e) {
+if (e.target === bgUploadModal) {
+bgUploadModal.classList.add('hidden');
+}
+});
+bgFileInput.addEventListener('change', function(e) {
+const file = e.target.files[0];
+if (file) {
+const reader = new FileReader();
+reader.onload = function(e) {
+document.body.style.backgroundImage = `url(${e.target.result})`;
+bgUploadModal.classList.add('hidden');
+};
+reader.readAsDataURL(file);
+}
+});
+});
+</script>
+<script id="knowledgeSection">
+document.addEventListener('DOMContentLoaded', function() {
+const sortTime = document.getElementById('sortTime');
+const sortCategory = document.getElementById('sortCategory');
+const uploadFile = document.getElementById('uploadFile');
+sortTime.addEventListener('click', function() {
+sortTime.classList.add('bg-primary', 'text-white');
+sortTime.classList.remove('bg-gray-200', 'text-gray-700');
+sortCategory.classList.add('bg-gray-200', 'text-gray-700');
+sortCategory.classList.remove('bg-primary', 'text-white');
+});
+sortCategory.addEventListener('click', function() {
+sortCategory.classList.add('bg-primary', 'text-white');
+sortCategory.classList.remove('bg-gray-200', 'text-gray-700');
+sortTime.classList.add('bg-gray-200', 'text-gray-700');
+sortTime.classList.remove('bg-primary', 'text-white');
+});
+uploadFile.addEventListener('click', function() {
+const input = document.createElement('input');
+input.type = 'file';
+input.accept = '.pdf,.doc,.docx,.txt';
+input.click();
+});
+});
+</script>
+<script id="dailyLifeSection">
+document.addEventListener('DOMContentLoaded', function() {
+const viewGrid = document.getElementById('viewGrid');
+const viewTimeline = document.getElementById('viewTimeline');
+const newPost = document.getElementById('newPost');
+const dailyGrid = document.getElementById('dailyGrid');
+viewGrid.addEventListener('click', function() {
+viewGrid.classList.add('bg-primary', 'text-white');
+viewGrid.classList.remove('bg-gray-200', 'text-gray-700');
+viewTimeline.classList.add('bg-gray-200', 'text-gray-700');
+viewTimeline.classList.remove('bg-primary', 'text-white');
+dailyGrid.className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-6';
+});
+viewTimeline.addEventListener('click', function() {
+viewTimeline.classList.add('bg-primary', 'text-white');
+viewTimeline.classList.remove('bg-gray-200', 'text-gray-700');
+viewGrid.classList.add('bg-gray-200', 'text-gray-700');
+viewGrid.classList.remove('bg-primary', 'text-white');
+dailyGrid.className = 'space-y-6';
+});
+newPost.addEventListener('click', function() {
+alert('New post creation feature coming soon!');
+});
+});
+</script>
+<!-- Netlify CMS & Identity Widget -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+<a href="/admin" style="position:fixed;bottom:16px;right:16px;z-index:9999;background:#D64045;color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none;font-weight:bold;">后台管理</a>
+</body>
+</html>
